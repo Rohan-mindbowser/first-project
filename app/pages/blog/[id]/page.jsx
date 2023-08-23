@@ -3,7 +3,7 @@ import Image from "next/image";
 import BlogImg from "public/space.png";
 
 async function getData(id) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+  const res = await fetch(`http://localhost:3000/api/post/${id}`, {
     cache: "no-store",
   });
   if (!res.ok) {
@@ -20,11 +20,19 @@ const BlogPost = async ({ params }) => {
       <div className="flex justify-between mb-8 flex-col sm:flex-row gap-4">
         <div className="flex-1">
           <h1 className="text-2xl font-bold mb-4">{singlePost?.title}</h1>
-          <p className="mb-4 text-sm">{singlePost?.body}</p>
-          <h2 className="font-bold text-md">Posted by : Rohan kadam</h2>
+          <p className="mb-4 text-sm">{singlePost?.desc}</p>
+          <h2 className="font-bold text-md">
+            Posted by : {singlePost?.username}
+          </h2>
         </div>
         <div className="flex-1 max-h-[400px]">
-          <Image src={BlogImg} className="object-cover h-full" alt="blog img" />
+          <Image
+            src={singlePost?.img}
+            width={500}
+            height={400}
+            className="object-cover h-full"
+            alt="blog img"
+          />
         </div>
       </div>
 

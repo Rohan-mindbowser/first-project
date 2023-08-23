@@ -1,10 +1,9 @@
 import Link from "next/link";
 import React from "react";
-import BlogImg from "public/space.png";
 import Image from "next/image";
 
 async function getData() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+  const res = await fetch("http://localhost:3000/api/post", {
     cache: "no-store",
   });
   if (!res.ok) {
@@ -21,15 +20,17 @@ const Blog = async () => {
     <div className="py-8">
       {allPosts?.map((post) => {
         return (
-          <Link href={`/pages/blog/${post?.id}`}>
+          <Link href={`/pages/blog/${post?._id}`}>
             <div className="flex justify-between mb-8 flex-col sm:flex-row">
               <div className="flex-1">
                 <h1 className="text-2xl font-bold mb-4">{post?.title}</h1>
-                <p>{post?.body}</p>
+                <p>{post?.desc}</p>
               </div>
               <div className="flex-1 max-h-[400px]">
                 <Image
-                  src={BlogImg}
+                  src={post?.img}
+                  width={500}
+                  height={300}
                   className="object-cover h-full"
                   alt="blog img"
                 />
