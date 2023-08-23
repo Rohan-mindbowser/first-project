@@ -4,7 +4,7 @@ import ContactImage from "public/contact.svg";
 
 const Contact = () => {
   return (
-    <div className="flex flex-col sm:flex-row flex-wrap gap-4 items-center">
+    <div className="flex flex-col sm:flex-row flex-wrap gap-4 items-center mb-6">
       <div className="flex-1 p-4">
         <Image
           src={ContactImage}
@@ -53,7 +53,7 @@ const Contact = () => {
             Your message
           </label>
           <div class="mt-2 w-full">
-            <textarea className="w-full" rows="4"></textarea>
+            <textarea className="w-full text-black p-1.5" rows="4"></textarea>
           </div>
         </div>
 

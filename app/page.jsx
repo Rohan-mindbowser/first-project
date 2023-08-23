@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="flex gap-4 items-center flex-wrap justify-between flex-col sm:flex-row my-24 sm:my-0">
       <div className="flex-1">
-        <h1 className="text-white font-bold text-4xl">
+        <h1 className="text-white font-bold text-2xl sm:text-4xl">
           On a mission to find a new habitable planet for humanity{" "}
         </h1>
         <p className="my-6">

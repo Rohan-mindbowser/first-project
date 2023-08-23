@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col sm:flex-row justify-between items-center min-h-[100px]">
+    <div className="flex flex-col sm:flex-row justify-between items-center min-h-[100px] py-4 sm:pb-0">
       <div>© 2023 Endurence space, Inc.</div>
       <div className="flex gap-4">
         <Image src="/1.png" width={25} height={25} alt="logo" />
